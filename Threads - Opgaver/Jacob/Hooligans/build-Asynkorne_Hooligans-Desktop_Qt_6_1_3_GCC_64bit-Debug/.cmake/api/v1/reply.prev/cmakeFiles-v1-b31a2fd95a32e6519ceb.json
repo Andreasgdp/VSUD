@@ -20,7 +20,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "/home/jacob/Documents/3-Semester/VSUD/Threads - Opgaver/Jacob/BingoRace/build-BingoRace-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/3.21.1/CMakeSystem.cmake"
+			"path" : "/home/jacob/Documents/3-Semester/VSUD/Threads - Opgaver/Jacob/Hooligans/build-Asynkorne_Hooligans-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/3.21.1/CMakeSystem.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -264,7 +264,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "/home/jacob/Documents/3-Semester/VSUD/Threads - Opgaver/Jacob/BingoRace/build-BingoRace-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake"
+			"path" : "/home/jacob/Documents/3-Semester/VSUD/Threads - Opgaver/Jacob/Hooligans/build-Asynkorne_Hooligans-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -388,14 +388,14 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "/home/jacob/Documents/3-Semester/VSUD/Threads - Opgaver/Jacob/BingoRace/build-BingoRace-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake"
+			"path" : "/home/jacob/Documents/3-Semester/VSUD/Threads - Opgaver/Jacob/Hooligans/build-Asynkorne_Hooligans-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/jacob/Documents/3-Semester/VSUD/Threads - Opgaver/Jacob/BingoRace/build-BingoRace-Desktop_Qt_6_1_3_GCC_64bit-Debug",
-		"source" : "/home/jacob/Documents/3-Semester/VSUD/Threads - Opgaver/Jacob/BingoRace/BingoRace"
+		"build" : "/home/jacob/Documents/3-Semester/VSUD/Threads - Opgaver/Jacob/Hooligans/build-Asynkorne_Hooligans-Desktop_Qt_6_1_3_GCC_64bit-Debug",
+		"source" : "/home/jacob/Documents/3-Semester/VSUD/Threads - Opgaver/Jacob/Hooligans/Asynkorne_Hooligans"
 	},
 	"version" : 
 	{

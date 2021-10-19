@@ -213,3 +213,11 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/jacob/Documents/3-Semester/VSUD/Threads - Opgaver/Jacob/BingoRace/build-BingoRace-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/jacob/Qt/Tools/Ninja/ninja cmTC_9b4ac && [1/2] Building CXX object CMakeFiles/cmTC_9b4ac.dir/CheckIncludeFile.cxx.o
+[2/2] Linking CXX executable cmTC_9b4ac
+
+
+

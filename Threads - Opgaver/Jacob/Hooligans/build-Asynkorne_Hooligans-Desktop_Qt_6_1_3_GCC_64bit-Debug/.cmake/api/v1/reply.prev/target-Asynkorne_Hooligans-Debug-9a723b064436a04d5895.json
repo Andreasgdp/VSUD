@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "BingoRace"
+			"path" : "Asynkorne_Hooligans"
 		}
 	],
 	"backtrace" : 1,
@@ -56,7 +56,7 @@
 			]
 		}
 	],
-	"id" : "BingoRace::@6890427a1f51a3e7e1df",
+	"id" : "Asynkorne_Hooligans::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -72,8 +72,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "BingoRace",
-	"nameOnDisk" : "BingoRace",
+	"name" : "Asynkorne_Hooligans",
+	"nameOnDisk" : "Asynkorne_Hooligans",
 	"paths" : 
 	{
 		"build" : ".",

@@ -1,17 +1,38 @@
 #include <iostream>
 #include <thread>
+#include <mutex>
 
-void printBingo() {
-    std::cout << " raaber \"BINGO\"" << std::endl;
+using namespace std;
+
+mutex talebamse;
+
+class Functor {
+public:
+    void operator()(std::string name) {
+        talebamse.lock();
+        std::cout << name << " raaber \"BINGO\"" << std::endl;
+        talebamse.unlock();
+    }
+};
+
+void printBingo(string name) {
+    talebamse.lock();
+    std::cout << name << " raaber \"BINGO\"" << std::endl;
+    talebamse.unlock();
 }
 
 
 int main() {
-    std::thread first(printBingo);
-    //thread second([](string name){cout << name << " raaber \"BINGO\"" << endl;}, "Claire");
+    thread first(printBingo, "Tom");
+    thread second([](string name){talebamse.lock();
+                                  cout << name << " raaber \"BINGO\"" << endl;
+                                  talebamse.unlock();}, "Claire");
+    Functor f;
+    thread third(f, "Jason");
 
     first.join();
-    //second.join();
+    second.join();
+    third.join();
 
     return 0;
 }

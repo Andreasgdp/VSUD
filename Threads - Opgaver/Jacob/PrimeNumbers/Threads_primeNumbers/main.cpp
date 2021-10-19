@@ -59,6 +59,6 @@ int main()
     producer.join();
     consumer.join();
 
-    cout << "sze: " << sze << endl;
+    cout << "sze: " << endl;
     return 0;
 }
