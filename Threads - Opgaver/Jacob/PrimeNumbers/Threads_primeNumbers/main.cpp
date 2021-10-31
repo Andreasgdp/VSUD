@@ -1,5 +1,4 @@
 #include <thread>
-#include <pthread.h>
 #include <chrono>
 #include <iostream>
 #include <random>
@@ -11,6 +10,14 @@ using namespace std;
 int primes[] = {1,2,3,5,7,11,13,17,19,23,29,31,37,41,43,47};
 
 mutex arr_mutex;
+
+void printArray(int arr[], int arrSize, string text) {
+    cout << text << endl;
+    for (size_t i = 0; i < arrSize; i++) {
+        std::cout << arr[i] << ' ';
+    }
+    cout << endl;
+}
 
 bool isPrime(int num){
     return (find(begin(primes), end(primes), num) != end(primes));
@@ -38,22 +45,28 @@ void insertNum(int arr[], int arrSize) {
     std::random_device rd;
     std::default_random_engine generator(rd());
 
-    for (int i = 0; i < arrSize; i++) {
-        if (arr[i] == 0) {
-            arr[i] = distribution(generator);
-            break;
+    while (carryon(arr, arrSize)) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        for (int i = 0; i < arrSize; i++) {
+            if (arr[i] == 0) {
+                arr[i] = distribution(generator);
+                break;
+            }
         }
+        printArray(arr, arrSize, "arr (insert): ");
     }
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
 }
 
 void removeNums(int arr[], int arrSize) {
-    for (int i = 0; i < arrSize; i++) {
-        if (!isPrime(arr[i])) {
-            arr[i] = 0;
+    while (carryon(arr, arrSize)) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        for (int i = 0; i < arrSize; i++) {
+            if (!isPrime(arr[i])) {
+                arr[i] = 0;
+            }
         }
+        printArray(arr, arrSize, "arr (remove): ");
     }
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
 }
 
 int usedElems(int arr[], int arrSize) {
@@ -77,31 +90,10 @@ int main()
     producer.join();
     consumer.join();
 
+    sort(arr, arr + arrSize);
+    printArray(arr, arrSize, "arr (sorted): ");
+
     cout << "size: " << usedElems(arr, arrSize) << endl;
-
-
-    //cout << "notPrime: " << isPrime(4) << endl;
-
-    /*
-    int arr[] = {1,2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,4};
-    int arrSize = sizeof(arr)/sizeof(arr[0]);
-
-    //insertNum(arr, arrSize);
-
-    cout << "arr: " << endl;
-    for (size_t i = 0; i < arrSize; i++) {
-        std::cout << arr[i] << ' ';
-    }
-    cout << endl;
-
-    removeNums(arr, arrSize);
-
-    cout << "arr: " << endl;
-    for (size_t i = 0; i < arrSize; i++) {
-        std::cout << arr[i] << ' ';
-    }
-    cout << endl;
-    */
 
     return 0;
 }
