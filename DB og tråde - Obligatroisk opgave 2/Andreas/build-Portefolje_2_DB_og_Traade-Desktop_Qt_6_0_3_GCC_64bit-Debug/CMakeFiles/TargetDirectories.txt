@@ -1,0 +1,3 @@
+/git/GitHub/VSUD/DB og tråde - Obligatroisk opgave 2/Andreas/build-Portefolje_2_DB_og_Traade-Desktop_Qt_6_0_3_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/git/GitHub/VSUD/DB og tråde - Obligatroisk opgave 2/Andreas/build-Portefolje_2_DB_og_Traade-Desktop_Qt_6_0_3_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/git/GitHub/VSUD/DB og tråde - Obligatroisk opgave 2/Andreas/build-Portefolje_2_DB_og_Traade-Desktop_Qt_6_0_3_GCC_64bit-Debug/CMakeFiles/Portefolje_2_DB_og_Traade.dir

@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Portefolje_2_DB_og_Traade",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Portefolje_2_DB_og_Traade::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Portefolje_2_DB_og_Traade-Debug-23c90376675322b0d246.json",
+					"name" : "Portefolje_2_DB_og_Traade",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/git/GitHub/VSUD/DB og tråde - Obligatroisk opgave 2/Jacob/build-Portefolje_2_DB_og_Traade-Desktop_Qt_6_0_3_GCC_64bit-Debug",
+		"source" : "/git/GitHub/VSUD/DB og tråde - Obligatroisk opgave 2/Jacob/Portefolje_2_DB_og_Traade"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
