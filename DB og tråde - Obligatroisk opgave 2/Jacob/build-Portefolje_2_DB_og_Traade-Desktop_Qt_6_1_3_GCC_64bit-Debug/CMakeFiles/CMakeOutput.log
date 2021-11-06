@@ -213,3 +213,47 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/jacob/Documents/3-Semester/VSUD/DB og tråde - Obligatroisk opgave 2/Jacob/build-Portefolje_2_DB_og_Traade-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/jacob/Qt/Tools/Ninja/ninja cmTC_5f19f && [1/2] Building CXX object CMakeFiles/cmTC_5f19f.dir/CheckIncludeFile.cxx.o
+[2/2] Linking CXX executable cmTC_5f19f
+
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/jacob/Documents/3-Semester/VSUD/DB og tråde - Obligatroisk opgave 2/Jacob/build-Portefolje_2_DB_og_Traade-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/jacob/Qt/Tools/Ninja/ninja cmTC_51ffc && [1/2] Building CXX object CMakeFiles/cmTC_51ffc.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_51ffc
+
+
+
+Performing C++ SOURCE FILE Test HAVE_STDATOMIC succeeded with the following output:
+Change Dir: /home/jacob/Documents/3-Semester/VSUD/DB og tråde - Obligatroisk opgave 2/Jacob/build-Portefolje_2_DB_og_Traade-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/jacob/Qt/Tools/Ninja/ninja cmTC_89406 && [1/2] Building CXX object CMakeFiles/cmTC_89406.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_89406
+
+
+Source file was:
+#include <atomic>
+#include <cstdint>
+
+void test(volatile std::atomic<std::int64_t> &a)
+{
+    std::int64_t v = a.load(std::memory_order_acquire);
+    while (!a.compare_exchange_strong(v, v + 1,
+                                      std::memory_order_acq_rel,
+                                      std::memory_order_acquire)) {
+        v = a.exchange(v - 1);
+    }
+    a.store(v + 1, std::memory_order_release);
+}
+
+int main(int, char **)
+{
+    void *ptr = (void*)0xffffffc0; // any random pointer
+    test(*reinterpret_cast<std::atomic<std::int64_t> *>(ptr));
+    return 0;
+}
