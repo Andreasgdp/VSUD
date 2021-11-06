@@ -89,6 +89,14 @@ build CMakeFiles/Portefolje_2_DB_og_Traade.dir/NumberPlateGenerator.cpp.o: CXX_C
   OBJECT_DIR = CMakeFiles/Portefolje_2_DB_og_Traade.dir
   OBJECT_FILE_DIR = CMakeFiles/Portefolje_2_DB_og_Traade.dir
 
+build CMakeFiles/Portefolje_2_DB_og_Traade.dir/Database.cpp.o: CXX_COMPILER__Portefolje_2_DB_og_Traade_Debug /home/jacob/Documents/3-Semester/VSUD/DB$ og$ tråde$ -$ Obligatroisk$ opgave$ 2/Jacob/Portefolje_2_DB_og_Traade/Database.cpp || cmake_object_order_depends_target_Portefolje_2_DB_og_Traade
+  DEFINES = -DQT_CORE_LIB -DQT_SQL_LIB
+  DEP_FILE = CMakeFiles/Portefolje_2_DB_og_Traade.dir/Database.cpp.o.d
+  FLAGS = -g -fPIC -pthread -std=gnu++17
+  INCLUDES = -isystem /home/jacob/Qt/6.1.3/gcc_64/include/QtSql -isystem /home/jacob/Qt/6.1.3/gcc_64/include -isystem /home/jacob/Qt/6.1.3/gcc_64/include/QtCore -isystem /home/jacob/Qt/6.1.3/gcc_64/mkspecs/linux-g++
+  OBJECT_DIR = CMakeFiles/Portefolje_2_DB_og_Traade.dir
+  OBJECT_FILE_DIR = CMakeFiles/Portefolje_2_DB_og_Traade.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Portefolje_2_DB_og_Traade
@@ -97,7 +105,7 @@ build CMakeFiles/Portefolje_2_DB_og_Traade.dir/NumberPlateGenerator.cpp.o: CXX_C
 #############################################
 # Link the executable Portefolje_2_DB_og_Traade
 
-build Portefolje_2_DB_og_Traade: CXX_EXECUTABLE_LINKER__Portefolje_2_DB_og_Traade_Debug CMakeFiles/Portefolje_2_DB_og_Traade.dir/main.cpp.o CMakeFiles/Portefolje_2_DB_og_Traade.dir/NumberPlateGenerator.cpp.o | /home/jacob/Qt/6.1.3/gcc_64/lib/libQt6Sql.so.6.1.3 /home/jacob/Qt/6.1.3/gcc_64/lib/libQt6Core.so.6.1.3
+build Portefolje_2_DB_og_Traade: CXX_EXECUTABLE_LINKER__Portefolje_2_DB_og_Traade_Debug CMakeFiles/Portefolje_2_DB_og_Traade.dir/main.cpp.o CMakeFiles/Portefolje_2_DB_og_Traade.dir/NumberPlateGenerator.cpp.o CMakeFiles/Portefolje_2_DB_og_Traade.dir/Database.cpp.o | /home/jacob/Qt/6.1.3/gcc_64/lib/libQt6Sql.so.6.1.3 /home/jacob/Qt/6.1.3/gcc_64/lib/libQt6Core.so.6.1.3
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/home/jacob/Qt/6.1.3/gcc_64/lib  -pthread  /home/jacob/Qt/6.1.3/gcc_64/lib/libQt6Sql.so.6.1.3  /home/jacob/Qt/6.1.3/gcc_64/lib/libQt6Core.so.6.1.3  -pthread
   OBJECT_DIR = CMakeFiles/Portefolje_2_DB_og_Traade.dir
