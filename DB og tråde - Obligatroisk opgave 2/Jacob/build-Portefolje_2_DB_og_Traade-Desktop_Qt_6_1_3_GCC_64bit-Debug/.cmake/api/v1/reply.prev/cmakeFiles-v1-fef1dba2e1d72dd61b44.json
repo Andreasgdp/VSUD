@@ -169,15 +169,6 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/jacob/Qt/Tools/CMake/share/cmake-3.21/Modules/CheckForPthreads.c"
-		},
-		{
-			"isGenerated" : true,
-			"path" : "/home/jacob/Documents/3-Semester/VSUD/DB og tråde - Obligatroisk opgave 2/Jacob/build-Portefolje_2_DB_og_Traade-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/FindThreads/CheckForPthreads.cxx"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
 			"path" : "/home/jacob/Qt/Tools/CMake/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake"
 		},
 		{
