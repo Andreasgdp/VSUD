@@ -5,6 +5,7 @@ class NumberPlateGenerator
 {
 public:
     NumberPlateGenerator();
+    ~NumberPlateGenerator();
     void generate(char* numberPlate);
 
 private:

@@ -8,6 +8,8 @@ class Database
 public:
     Database();
     void createDatabase();
+    void updateTotalPlateNumberReached(int totalPlateNumberReached);
+    int getTotalPlateNumberReached();
     bool isEmpty();
     void insertCar(char* numberPlate, std::string model, int aargang, std::string ejer);
 

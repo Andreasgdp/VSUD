@@ -33,16 +33,42 @@ void generateData(char* numberPlate) {
     }
 }
 
+bool carryon() {
+    return true;
+}
+
+// Ved køb af bil
 void addCar(char* numberPlate) {
-
+    NumberPlateGenerator.generate(numberPlate);
+    cout << numberPlate << endl;
+    db.insertCar(numberPlate, modeller[distribution(generator)], aargang(generator), ejerer[distribution(generator)]);
+    while (carryon()) {
+        //mtx.lock();
+//        NumberPlateGenerator.generate(numberPlate);
+//        db.insertCar(numberPlate, modeller[distribution(generator)], aargang(generator), ejerer[distribution(generator)]);
+        //mtx.unlock();
+        std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    }
 }
 
+// Ved skrotning af bil
 void removeCar() {
+    while (carryon()) {
+        mtx.lock();
 
+        mtx.unlock();
+        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+    }
 }
 
+// Ved ejer skifte af bil
 void reRegisterCar(char* numberPlate) {
+    while (carryon()) {
+        mtx.lock();
 
+        mtx.unlock();
+        std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+    }
 }
 
 
