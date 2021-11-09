@@ -1,22 +1,13 @@
 #include "NumberPlateGenerator.h"
-#include "Database.h"
 #include <string>
 #include <cstring>
 #include <iostream>
 
 using namespace std;
 
-Database dab;
-
 NumberPlateGenerator::NumberPlateGenerator() {
-    //dab.updateTotalPlateNumberReached(0);
-    _totalPlateNumberReached = dab.getTotalPlateNumberReached();
-    cout << "Works here" << endl;
-    _plateNumberReached = _totalPlateNumberReached % 100000;
-}
-
-NumberPlateGenerator::~NumberPlateGenerator() {
-    dab.updateTotalPlateNumberReached(_totalPlateNumberReached);
+    _totalPlateNumberReached = 0;
+    _plateNumberReached = 0;
 }
 
 void NumberPlateGenerator::generate(char* numberPlate) {

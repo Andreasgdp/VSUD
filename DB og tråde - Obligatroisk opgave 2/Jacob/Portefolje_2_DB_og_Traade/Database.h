@@ -8,10 +8,16 @@ class Database
 public:
     Database();
     void createDatabase();
-    void updateTotalPlateNumberReached(int totalPlateNumberReached);
-    int getTotalPlateNumberReached();
-    bool isEmpty();
+    void dropDatabase();
+    void createIndex();
+
+    int getLenghtOfTable();
+    bool doesNumberPlateAlreadyExist(char* numberPlate);
+
     void insertCar(char* numberPlate, std::string model, int aargang, std::string ejer);
+    void removeCar(int id);
+    void reRegistreCar(std::string ejer, std::string model, std::string kober);
+    void performanceTest(std::string ejer, std::string model);
 
 private:
     QSqlDatabase _db;

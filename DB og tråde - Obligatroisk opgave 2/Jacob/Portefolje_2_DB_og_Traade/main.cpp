@@ -16,7 +16,7 @@ using namespace std;
 mutex mtx;
 
 string modeller[] = {"Audi","BMW","VW","Mercedes","Volvo"};
-string ejerer[] = {"Jens","Peter","Knud","Hans","Egon"};
+string ejerer[] = {"Jens","Erik","Knud","Hans","Egon"};
 
 NumberPlateGenerator NumberPlateGenerator;
 Database db;
@@ -28,26 +28,53 @@ std::default_random_engine generator(rd());
 
 void generateData(char* numberPlate) {
     for (int i = 0; i < 20000; i++) {
-        NumberPlateGenerator.generate(numberPlate);
-        db.insertCar(numberPlate, modeller[distribution(generator)], aargang(generator), ejerer[distribution(generator)]);
+        do {
+            NumberPlateGenerator.generate(numberPlate);
+        } while (db.doesNumberPlateAlreadyExist(numberPlate));
+        string model = modeller[distribution(generator)];
+        int aargang_var = aargang(generator);
+        string ejer = ejerer[distribution(generator)];
+        db.insertCar(numberPlate, model, aargang_var, ejer);
+    }
+
+    cout << "Create index? (y/n): ";
+    string answer;
+    cin >> answer;
+    if (answer == "y") {
+        db.createIndex();
+    } else if (answer == "n") {
+
+    } else {
+        throw invalid_argument("You can only answer y or n!");
     }
 }
 
 bool carryon() {
-    return true;
+    mtx.lock();
+    if (db.getLenghtOfTable() < 20100) {
+        mtx.unlock();
+        return true;
+    } else {
+        mtx.unlock();
+        return false;
+    }
 }
 
-// Ved køb af bil
-void addCar(char* numberPlate) {
-    NumberPlateGenerator.generate(numberPlate);
-    cout << numberPlate << endl;
-    db.insertCar(numberPlate, modeller[distribution(generator)], aargang(generator), ejerer[distribution(generator)]);
+// Ved registrering af bil
+void insertCar(char* numberPlate) {
     while (carryon()) {
-        //mtx.lock();
-//        NumberPlateGenerator.generate(numberPlate);
-//        db.insertCar(numberPlate, modeller[distribution(generator)], aargang(generator), ejerer[distribution(generator)]);
-        //mtx.unlock();
-        std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+        mtx.lock();
+        do {
+            NumberPlateGenerator.generate(numberPlate);
+        } while (db.doesNumberPlateAlreadyExist(numberPlate));
+        string model = modeller[distribution(generator)];
+        int aargang_var = aargang(generator);
+        string ejer = ejerer[distribution(generator)];
+        cout << "insert... " << "(" << numberPlate << ") ";
+        db.insertCar(numberPlate, model, aargang_var, ejer);
+        cout << "done" << endl;
+        mtx.unlock();
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 }
 
@@ -55,19 +82,32 @@ void addCar(char* numberPlate) {
 void removeCar() {
     while (carryon()) {
         mtx.lock();
-
+        std::uniform_int_distribution<int> selectRandomNumberplateId(0, db.getLenghtOfTable());
+        int randomNumberPlateId = selectRandomNumberplateId(generator);
+        cout << "remove... " << "(Id: " << randomNumberPlateId << ") ";
+        db.removeCar(randomNumberPlateId);
+        cout << "done" << endl;
         mtx.unlock();
-        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
 }
 
-// Ved ejer skifte af bil
-void reRegisterCar(char* numberPlate) {
+// Ved ejerskifte af bil
+void reRegisterCar() {
     while (carryon()) {
         mtx.lock();
-
+        string ejer = "";
+        string kober = "";
+        string model = modeller[distribution(generator)];
+        do {
+            ejer = ejerer[distribution(generator)];
+            kober = ejerer[distribution(generator)];
+        } while (ejer == kober);
+        cout << "re-registre... " << "(" << ejer << ", " << model << ", " << kober << ") ";
+        db.reRegistreCar(ejer, model, kober);
+        cout << "done" << endl;
         mtx.unlock();
-        std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
 }
 
@@ -75,18 +115,41 @@ void reRegisterCar(char* numberPlate) {
 int main()
 {
     db.createDatabase();
-
     char* numberPlate = new char[7];
-    if (db.isEmpty())
+
+    cout << "Clear table 'bil'? (y/n): ";
+    string answer;
+    cin >> answer;
+    if (answer == "y") {
+        db.dropDatabase();
+        db.createDatabase();
         generateData(numberPlate);
+    } else if (answer == "n") {
 
-    thread adder{addCar, numberPlate};
-    thread deleter{removeCar};
-    thread reRegister{reRegisterCar, numberPlate};
+    } else {
+        throw invalid_argument("You can only answer y or n!");
+    }
 
-    adder.join();
-    deleter.join();
+    thread inserter{insertCar, numberPlate};
+    thread remover{removeCar};
+    thread reRegister{reRegisterCar};
+
+    inserter.join();
+    remover.join();
     reRegister.join();
+
+    while (!carryon()) {
+        cout << "Do performance check? (y/n): ";
+        string answer;
+        cin >> answer;
+        if (answer == "y") {
+            db.performanceTest(ejerer[distribution(generator)], modeller[distribution(generator)]);
+        } else if (answer == "n") {
+            break;
+        } else {
+            throw invalid_argument("You can only answer y or n!");
+        }
+    }
 
     return 0;
 }
