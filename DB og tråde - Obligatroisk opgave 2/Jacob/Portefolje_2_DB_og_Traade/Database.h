@@ -19,8 +19,11 @@ public:
     void reRegistreCar(std::string ejer, std::string model, std::string kober);
     void performanceTest(std::string ejer, std::string model);
 
+    const std::vector<double> &getSvartider() const;
+
 private:
     QSqlDatabase _db;
+    std::vector<double> svartider;
 };
 
 #endif // DATABASE_H

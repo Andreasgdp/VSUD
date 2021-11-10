@@ -27,6 +27,7 @@ std::random_device rd;
 std::default_random_engine generator(rd());
 
 void generateData(char* numberPlate) {
+    cout << "generating data... " << endl << endl;
     for (int i = 0; i < 20000; i++) {
         do {
             NumberPlateGenerator.generate(numberPlate);
@@ -41,6 +42,7 @@ void generateData(char* numberPlate) {
     string answer;
     cin >> answer;
     if (answer == "y") {
+        cout << "creating index... " << endl << endl;
         db.createIndex();
     } else if (answer == "n") {
 
@@ -51,7 +53,7 @@ void generateData(char* numberPlate) {
 
 bool carryon() {
     mtx.lock();
-    if (db.getLenghtOfTable() < 20100) {
+    if (db.getLenghtOfTable() < 20000) {
         mtx.unlock();
         return true;
     } else {
@@ -121,9 +123,19 @@ int main()
     string answer;
     cin >> answer;
     if (answer == "y") {
+        cout << "clearing... " << endl << endl;
         db.dropDatabase();
         db.createDatabase();
-        generateData(numberPlate);
+        cout << "Generate data (fast method)? (y/n): ";
+        string answer;
+        cin >> answer;
+        if (answer == "y") {
+            generateData(numberPlate);
+        } else if (answer == "n") {
+
+        } else {
+            throw invalid_argument("You can only answer y or n!");
+        }
     } else if (answer == "n") {
 
     } else {
@@ -145,6 +157,14 @@ int main()
         if (answer == "y") {
             db.performanceTest(ejerer[distribution(generator)], modeller[distribution(generator)]);
         } else if (answer == "n") {
+            vector<double> svartider = db.getSvartider();
+            if (svartider.size() > 0) {
+                double totalSvartid = 0;
+                for (int i = 0; i < svartider.size(); i++) {
+                    totalSvartid += svartider[i];
+                }
+                cout << "gns svartid(ms): " << totalSvartid / svartider.size() << endl << endl;
+            }
             break;
         } else {
             throw invalid_argument("You can only answer y or n!");

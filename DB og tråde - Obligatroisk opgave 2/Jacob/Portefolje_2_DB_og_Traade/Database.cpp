@@ -184,12 +184,18 @@ void Database::performanceTest(std::string ejer, std::string model) {
 
         auto start = std::chrono::steady_clock::now();
         success = query.exec();
-        std::cout << "Elapsed(ms)="
-                  << static_cast<double>(since<std::chrono::microseconds>(start).count()) / 1000 << endl;;
+        double svartid = static_cast<double>(since<std::chrono::microseconds>(start).count()) / 1000;
+
+        std::cout << "Elapsed(ms)=" << svartid << endl << endl;
+        svartider.push_back(svartid);
 
         if (!success) {
             qDebug() << query.lastError();
             _db.rollback();
         }
     }
+}
+
+const std::vector<double> &Database::getSvartider() const {
+    return svartider;
 }
