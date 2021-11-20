@@ -1,4 +1,15 @@
 # ninja log v5
-0	291	1636211978326569097	CMakeFiles/Portefolje_2_DB_og_Traade.dir/LicensePlateGenerator.cpp.o	e2536bc9195693bf
-0	3415	1636211981446602032	CMakeFiles/Portefolje_2_DB_og_Traade.dir/main.cpp.o	d0f0b7329ec63b79
-3416	3590	1636211981622603891	Portefolje_2_DB_og_Traade	6b300ae44a6af8e7
+1	3634	1637435239372620282	CMakeFiles/Portefolje_2_DB_og_Traade.dir/API.cpp.o	ace24c06782e6274
+3783	3977	1637435239716616627	Portefolje_2_DB_og_Traade	52efec6472c8c7b0
+1	3783	1637435239524618667	CMakeFiles/Portefolje_2_DB_og_Traade.dir/main.cpp.o	d0f0b7329ec63b79
+2	295	1636987299367736777	CMakeFiles/Portefolje_2_DB_og_Traade.dir/LicensePlateGenerator.cpp.o	e2536bc9195693bf
+1	3667	1637435300591629568	CMakeFiles/Portefolje_2_DB_og_Traade.dir/main.cpp.o	d0f0b7329ec63b79
+3667	3863	1637435300787625387	Portefolje_2_DB_og_Traade	52efec6472c8c7b0
+2	3522	1637435342906594852	CMakeFiles/Portefolje_2_DB_og_Traade.dir/API.cpp.o	ace24c06782e6274
+3522	3720	1637435343102589479	Portefolje_2_DB_og_Traade	52efec6472c8c7b0
+2	3690	1637435465130402724	CMakeFiles/Portefolje_2_DB_og_Traade.dir/main.cpp.o	d0f0b7329ec63b79
+3690	3885	1637435465326394843	Portefolje_2_DB_og_Traade	52efec6472c8c7b0
+1	3644	1637436592768948203	CMakeFiles/Portefolje_2_DB_og_Traade.dir/main.cpp.o	d0f0b7329ec63b79
+3644	3837	1637436592960947327	Portefolje_2_DB_og_Traade	52efec6472c8c7b0
+2	3558	1637436858545275506	CMakeFiles/Portefolje_2_DB_og_Traade.dir/main.cpp.o	d0f0b7329ec63b79
+3558	3747	1637436858733271679	Portefolje_2_DB_og_Traade	52efec6472c8c7b0

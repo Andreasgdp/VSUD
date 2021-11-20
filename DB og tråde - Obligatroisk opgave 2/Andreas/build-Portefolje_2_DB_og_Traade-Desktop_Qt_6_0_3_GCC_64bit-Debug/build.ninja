@@ -89,6 +89,14 @@ build CMakeFiles/Portefolje_2_DB_og_Traade.dir/LicensePlateGenerator.cpp.o: CXX_
   OBJECT_DIR = CMakeFiles/Portefolje_2_DB_og_Traade.dir
   OBJECT_FILE_DIR = CMakeFiles/Portefolje_2_DB_og_Traade.dir
 
+build CMakeFiles/Portefolje_2_DB_og_Traade.dir/API.cpp.o: CXX_COMPILER__Portefolje_2_DB_og_Traade_Debug /git/GitHub/VSUD/DB$ og$ tråde$ -$ Obligatroisk$ opgave$ 2/Andreas/Portefolje_2_DB_og_Traade/API.cpp || cmake_object_order_depends_target_Portefolje_2_DB_og_Traade
+  DEFINES = -DQT_CORE_LIB -DQT_SQL_LIB
+  DEP_FILE = CMakeFiles/Portefolje_2_DB_og_Traade.dir/API.cpp.o.d
+  FLAGS = -g -fPIC -pthread -std=gnu++17
+  INCLUDES = -isystem /opt/QT_creator/6.0.3/gcc_64/include/QtSql -isystem /opt/QT_creator/6.0.3/gcc_64/include -isystem /opt/QT_creator/6.0.3/gcc_64/include/QtCore -isystem /opt/QT_creator/6.0.3/gcc_64/mkspecs/linux-g++
+  OBJECT_DIR = CMakeFiles/Portefolje_2_DB_og_Traade.dir
+  OBJECT_FILE_DIR = CMakeFiles/Portefolje_2_DB_og_Traade.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Portefolje_2_DB_og_Traade
@@ -97,7 +105,7 @@ build CMakeFiles/Portefolje_2_DB_og_Traade.dir/LicensePlateGenerator.cpp.o: CXX_
 #############################################
 # Link the executable Portefolje_2_DB_og_Traade
 
-build Portefolje_2_DB_og_Traade: CXX_EXECUTABLE_LINKER__Portefolje_2_DB_og_Traade_Debug CMakeFiles/Portefolje_2_DB_og_Traade.dir/main.cpp.o CMakeFiles/Portefolje_2_DB_og_Traade.dir/LicensePlateGenerator.cpp.o | /opt/QT_creator/6.0.3/gcc_64/lib/libQt6Sql.so.6.0.3 /opt/QT_creator/6.0.3/gcc_64/lib/libQt6Core.so.6.0.3
+build Portefolje_2_DB_og_Traade: CXX_EXECUTABLE_LINKER__Portefolje_2_DB_og_Traade_Debug CMakeFiles/Portefolje_2_DB_og_Traade.dir/main.cpp.o CMakeFiles/Portefolje_2_DB_og_Traade.dir/LicensePlateGenerator.cpp.o CMakeFiles/Portefolje_2_DB_og_Traade.dir/API.cpp.o | /opt/QT_creator/6.0.3/gcc_64/lib/libQt6Sql.so.6.0.3 /opt/QT_creator/6.0.3/gcc_64/lib/libQt6Core.so.6.0.3
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/opt/QT_creator/6.0.3/gcc_64/lib  /opt/QT_creator/6.0.3/gcc_64/lib/libQt6Sql.so.6.0.3  /opt/QT_creator/6.0.3/gcc_64/lib/libQt6Core.so.6.0.3  -pthread
   OBJECT_DIR = CMakeFiles/Portefolje_2_DB_og_Traade.dir

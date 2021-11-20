@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Portefolje_2_DB_og_Traade::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Portefolje_2_DB_og_Traade-Debug-87331f3ab76926344991.json",
+					"jsonFile" : "target-Portefolje_2_DB_og_Traade-Debug-269d7057db77cb66dfce.json",
 					"name" : "Portefolje_2_DB_og_Traade",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/git/GitHub/VSUD/DB og tråde - Obligatroisk opgave 2/Andreas/build-Portefolje_2_DB_og_Traade-Desktop_Qt_6_0_3_GCC_64bit-Debug",
-		"source" : "/git/GitHub/VSUD/DB og tråde - Obligatroisk opgave 2/Andreas/Portefolje_2_DB_og_Traade"
+		"build" : "/git/GitHub/VSUD/DB og tråde - Obligatroisk opgave 2/Jacob/build-Portefolje_2_DB_og_Traade-Desktop_Qt_6_0_3_GCC_64bit-Debug",
+		"source" : "/git/GitHub/VSUD/DB og tråde - Obligatroisk opgave 2/Jacob/Portefolje_2_DB_og_Traade"
 	},
 	"version" : 
 	{

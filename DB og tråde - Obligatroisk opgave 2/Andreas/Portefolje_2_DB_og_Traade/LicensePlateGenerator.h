@@ -6,7 +6,7 @@ class LicensePlateGenerator
 {
 public:
     LicensePlateGenerator();
-    void generate(char* licensePlate);
+    void generateNext(char* licensePlate);
 
 private:
     // Static in order to prevent possible multible instances

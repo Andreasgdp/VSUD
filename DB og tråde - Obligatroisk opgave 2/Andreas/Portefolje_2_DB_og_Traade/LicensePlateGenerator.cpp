@@ -10,7 +10,7 @@ LicensePlateGenerator::LicensePlateGenerator()
     _totalPlateAmtReached = 0;
 }
 
-void LicensePlateGenerator::generate(char *licensePlate)
+void LicensePlateGenerator::generateNext(char *licensePlate)
 {
     int maxNumCombinations = 100000;
 
